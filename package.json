@@ -1,10 +1,16 @@
 {
-  "name": "application-name",
-  "version": "2.0.0",
-  "private": true,
+  "name": "testangular4",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "start": "node server"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
+  "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
@@ -18,10 +24,6 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
-  },
-  "license": "Apache",
-  "engines": {
-    "node": "~0.10.0 || ~4.2.0"
   },
   "devDependencies": {
     "@angular/cli": "1.5.3",
