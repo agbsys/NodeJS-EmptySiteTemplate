@@ -1,8 +1,13 @@
-var http = require('http');
+const express = require('express');
 
-http.createServer(function (req, res) {
-    
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('Hello, prueba!');
-    
-}).listen(process.env.PORT || 8080);
+const publicweb = process.env.PUBLICWEB || './dist/publicweb';
+const app = express();
+
+app.use(express.static(publicweb));
+console.log(`serving ${publicweb}`);
+app.get('*', (req, res) => {
+    res.sendFile('index.html', { root: publicweb });
+});
+
+const port = process.env.SERVER_PORT || '8080';
+app.listen(port, () => console.log(`API running on localhost:${port}`));
